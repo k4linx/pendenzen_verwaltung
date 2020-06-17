@@ -3,7 +3,7 @@ package com.example.pendenzen_verwaltung;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+//Main Class
 public class MainActivity extends AppCompatActivity {
 
     @Override
