@@ -3,4 +3,6 @@
     <string name="date_text">Datum:</string>
     <string name="priority_text">Priorität:</string>
     <string name="button_text">Fertig</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

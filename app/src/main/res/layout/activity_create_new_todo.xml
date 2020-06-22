@@ -49,6 +49,7 @@
         android:hint="@string/date_placeholder"
         android:importantForAutofill="no"
         android:inputType="date"
+        android:onClick="showDatePickerDialog"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleInput" />
