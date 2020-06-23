@@ -60,8 +60,10 @@ public class CreateNewTodoActivity extends AppCompatActivity {
         }else{
             pending.setPendingTitle(titleText);
             pending.setPendingDescription(descriptionText);
-            pending.setPendingTitle(dateText);
+            pending.setPendingDate(dateText);
             pending.setPendingImportance(prioValue);
+
+            todoToSave.add(pending);
 
             mPendingDao.insertAll(todoToSave);
 

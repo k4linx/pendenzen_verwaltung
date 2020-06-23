@@ -1,7 +1,9 @@
 package com.example.pendenzen_verwaltung;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,8 +24,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         mPendingDao = AppDatabase.getAppDb(getApplicationContext()).getPendingDao();
         List<Pending> pendingsFromDatabase = mPendingDao.getAll();
+
+        Log.d("TAG", "onCreate: " + pendingsFromDatabase.size());
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);

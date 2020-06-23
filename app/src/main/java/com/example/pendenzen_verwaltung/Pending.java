@@ -11,8 +11,6 @@ public class Pending {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    //Spalte heisst in der DB account_name
-    @ColumnInfo(name="account_name")
     private String pendingTitle;
 
     //Wenn nicht angegeben, heisst Spalte in der DB wie Variable, d.h. hier firstName.
