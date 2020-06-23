@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title_placeholder">Titel</string>
+    <string name="description_placeholder">Beschreibung</string>
+
     <string name="date_placeholder">Zu machen bis:</string>
 </resources>

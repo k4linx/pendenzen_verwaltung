@@ -7,6 +7,25 @@
     tools:context=".CreateNewTodoActivity">
 
     <EditText
+        android:id="@+id/descriptionInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:ems="10"
+        android:hint="@string/description_placeholder"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleInput" />
+
+    <EditText
         android:id="@+id/titleInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -25,35 +44,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dateTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:text="@string/date_text"
-        app:layout_constraintBottom_toBottomOf="@+id/dateInput"
-        app:layout_constraintEnd_toStartOf="@+id/dateInput"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dateInput" />
-
-    <EditText
-        android:id="@+id/dateInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:ems="10"
-        android:hint="@string/date_placeholder"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleInput" />
-
-    <TextView
         android:id="@+id/priorityTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -64,18 +54,68 @@
         android:text="@string/priority_text"
         app:layout_constraintBottom_toBottomOf="@+id/priorityRadioGroup"
         app:layout_constraintEnd_toStartOf="@+id/priorityRadioGroup"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/priorityRadioGroup" />
+        app:layout_constraintTop_toTopOf="@+id/priorityRadioGroup"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/date_text"
+        app:layout_constraintBottom_toBottomOf="@+id/dateInput"
+        app:layout_constraintEnd_toStartOf="@+id/dateInput"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dateInput"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <EditText
+        android:id="@+id/dateInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:ems="10"
+        android:hint="@string/date_placeholder"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionInput" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:onClick="saveNewTodo"
+        android:text="@string/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priorityRadioGroup" />
 
     <RadioGroup
         android:id="@+id/priorityRadioGroup"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/dateInput"
         app:layout_constraintTop_toBottomOf="@+id/dateInput">
 
@@ -84,36 +124,27 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/priority_high" />
+            android:text="@string/priority_high"
+            tools:layout_editor_absoluteX="299dp"
+            tools:layout_editor_absoluteY="256dp" />
 
         <RadioButton
             android:id="@+id/mediumPriorityRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/priority_medium" />
+            android:text="@string/priority_medium"
+            tools:layout_editor_absoluteX="373dp"
+            tools:layout_editor_absoluteY="256dp" />
 
         <RadioButton
             android:id="@+id/lowPriorityRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/priority_low" />
+            android:text="@string/priority_low"
+            tools:layout_editor_absoluteX="443dp"
+            tools:layout_editor_absoluteY="256dp" />
     </RadioGroup>
-
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:onClick="saveNewTodo"
-        android:text="@string/button_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priorityRadioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
