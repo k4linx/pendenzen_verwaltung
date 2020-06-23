@@ -1,15 +1,15 @@
 package com.example.pendenzen_verwaltung;
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.example.pendenzen_verwaltung.model.User;
-@Database(entities = {User.class}, version = 2)
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+
+@Database(entities = {Pending.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
-    private static final String DB_NAME = "DemoDb";
+    private static final String DB_NAME = "Pending_DB";
     private static AppDatabase appDb;
 
     public static AppDatabase getAppDb(Context context) {

@@ -1,24 +1,22 @@
 package com.example.pendenzen_verwaltung;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.Query;
 
 import java.util.List;
 
-import ch.nyp.databaseexample.model.User;
-
 @Dao
 public interface PendingDao {
-    @Query("SELECT * FROM user")
-    List<User> getAll();
+    @Query("SELECT * FROM pending")
+    List<Pending> getAll();
 
-    @Query("DELETE FROM user")
+    @Query("DELETE FROM pending")
     void deleteAll();
 
     @Insert
-    void insertAll(List<User> users);
+    void insertAll(List<Pending> users);
 
-    @Query("Select count(*) from user")
+    @Query("Select count(*) from pending")
     int countUsers();
 }
