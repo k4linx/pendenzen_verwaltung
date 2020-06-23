@@ -26,10 +26,9 @@ public class Pending {
 
     private int pendingImportance;
 
-    private Date pendingDate;
+    private String pendingDate;
 
     //@Ignore bedeutet, dass für diese Variable keine Spalte in der DB erzeugt werden soll.
-    private Bitmap image;
 
     public int getId() {
         return id;
@@ -63,11 +62,11 @@ public class Pending {
         this.pendingImportance = pendingImportance;
     }
 
-    public Date getPendingDate() {
+    public String getPendingDate() {
         return pendingDate;
     }
 
-    public void setPendingDate(Date pendingDate) {
+    public void setPendingDate(String pendingDate) {
         this.pendingDate = pendingDate;
     }
 
@@ -77,13 +76,5 @@ public class Pending {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public Bitmap getImage() {
-        return image;
-    }
-
-    public void setImage(Bitmap image) {
-        this.image = image;
     }
 }
