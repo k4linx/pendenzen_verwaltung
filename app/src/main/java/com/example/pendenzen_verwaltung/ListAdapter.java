@@ -8,14 +8,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Map;
+import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder>  {
 
-    private Map<Integer, String> data;
+    private List<Pending> data;
 
 
-    public ListAdapter(Map<Integer, String> data){
+    public ListAdapter(List<Pending> data){
         this.data = data;
     }
     @NonNull
@@ -27,7 +27,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     @Override
     public void onBindViewHolder(ListViewHolder holder, int position) {
-        holder.textView.setText(data.get(position));
+        holder.textView.setText(data.get(position).getPendingTitle());
     }
 
     @Override

@@ -1,12 +1,8 @@
 package com.example.pendenzen_verwaltung;
 
-import android.graphics.Bitmap;
-
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import java.util.Date;
 
 @Entity
 public class Pending {
@@ -22,7 +18,6 @@ public class Pending {
     //Wenn nicht angegeben, heisst Spalte in der DB wie Variable, d.h. hier firstName.
     private String pendingDescription;
 
-    private String lastName;
 
     private int pendingImportance;
 
@@ -68,13 +63,5 @@ public class Pending {
 
     public void setPendingDate(String pendingDate) {
         this.pendingDate = pendingDate;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 }
