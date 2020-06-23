@@ -2,10 +2,13 @@ package com.example.pendenzen_verwaltung;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +17,7 @@ public class CreateNewTodoActivity extends AppCompatActivity {
 
     RadioGroup rgPriority;
 
+    String TAG = "CreateNewTodoActivity";
     PendingDao mPendingDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,8 @@ public class CreateNewTodoActivity extends AppCompatActivity {
                 prioValue = 1;
             case R.id.highPriorityRadioButton:
                 prioValue = 2;
+            default:
+                prioValue = 0;
         }
 
         List<Pending> todoToSave = new ArrayList<>();
@@ -48,7 +54,10 @@ public class CreateNewTodoActivity extends AppCompatActivity {
         String titleText = title.getText().toString();
         String descriptionText = description.getText().toString();
         String dateText = date.getText().toString();
-        if(!(titleText == "" || descriptionText == "" || dateText == "")){
+        //Log.d(TAG, "title: :" + title.getText() + ":");
+        if(titleText.matches("") || descriptionText.matches("") || dateText.matches("")){
+            Toast.makeText(CreateNewTodoActivity.this, "Please fill out all fields", Toast.LENGTH_LONG).show();
+        }else{
             pending.setPendingTitle(titleText);
             pending.setPendingDescription(descriptionText);
             pending.setPendingTitle(dateText);
@@ -59,8 +68,9 @@ public class CreateNewTodoActivity extends AppCompatActivity {
             title.setText("");
             description.setText("");
             date.setText("");
-        }else{
-            
+
+            startActivity(new Intent(CreateNewTodoActivity.this, MainActivity.class));
+
         }
     }
 }
